@@ -9,7 +9,7 @@ const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
-const db = knex({
+const db = knex({     	// kenx - SQL query builder in Node.JS & browser
   client: 'pg',
   connection: {
     host : '127.0.0.1', //localhost
