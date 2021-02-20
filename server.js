@@ -12,10 +12,8 @@ const image = require('./controllers/image');
 const db = knex({     	// kenx - SQL query builder in Node.JS & browser
   client: 'pg',
   connection: {
-    host : 'postgresql-transparent-54272',
-    user: 'postgres',
-    password: 'test',
-    database: 'smart_brain'
+    host : process.env.DATABASE_URL,
+    ssl: true,
   }
 });
 
