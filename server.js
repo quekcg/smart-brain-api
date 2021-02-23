@@ -17,7 +17,7 @@ const db = knex({
 		password: 'test', // password for database
 		database: 'smart_brain' //database name
 	}
-})
+});
 
 const app = express();
 
@@ -34,7 +34,6 @@ app.post('/imageurl', (req, res) => { image.handleApiCall(req, res) })
 app.listen( process.env.PORT || 3001, () => {
 	console.log(`app is running on port ${process.env.PORT}`);
 })
-
 
 // app.get('/', (req, res) => { res.send('it is working') })
 
