@@ -9,6 +9,8 @@ const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0
+
 const db = knex({    // kenx - SQL query builder in Node.JS & browser
   client: 'pg',
   connection: {
@@ -37,7 +39,6 @@ app.listen( process.env.PORT || 3001, () => {
 
 
 
-// process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0
 
 // const db = knex({
 // 	client:'pg',
