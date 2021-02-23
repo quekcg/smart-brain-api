@@ -9,15 +9,15 @@ const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0
-
-const db = knex({     	// kenx - SQL query builder in Node.JS & browser
-  client: 'pg',
-  connection: {
-    connectionString : process.env.DATABASE_URL,
-    ssl: true,
-  }
-});
+const db = knex({
+	client:'pg',
+	connection: { 
+		host: '127.0.0.1', //localhost
+		user: 'postgres', //username for database
+		password: 'test', // password for database
+		database: 'smart_brain' //database name
+	}
+})
 
 const app = express();
 
@@ -35,5 +35,21 @@ app.listen( process.env.PORT || 3001, () => {
 	console.log(`app is running on port ${process.env.PORT}`);
 })
 
-app.get('/', (req, res) => { res.send('it is working') })
 
+// app.get('/', (req, res) => { res.send('it is working') })
+
+
+
+// process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0
+
+// const db = knex({     	// kenx - SQL query builder in Node.JS & browser
+//   client: 'pg',
+//   connection: {
+//     connectionString : process.env.DATABASE_URL,
+//     ssl: true,
+//   }
+// });
+
+// app.listen(3001, () => {
+// 	console.log(`app is running on port 3001`);
+// })
